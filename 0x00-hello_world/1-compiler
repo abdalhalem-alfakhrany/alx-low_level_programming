@@ -1,4 +1,3 @@
 #!/bin/bash
-NAME=$( echo "$CFILE" | cut -d. -f1)
-gcc -o $NAME.o $CFILE
+gcc -o $( echo "$CFILE" | cut -d. -f1).o $CFILE
  
