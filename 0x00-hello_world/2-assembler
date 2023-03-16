@@ -1,3 +1,2 @@
 #!/bin/bash
-NAME=$( echo $CFILE | cut -d. -f1 )
-gcc $CFILE -s -o $NAME.s
+gcc $CFILE -s -o $( echo $CFILE | cut -d. -f1 ).s
