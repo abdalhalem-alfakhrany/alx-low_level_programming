@@ -14,11 +14,11 @@ int main(void)
 		for (j = i + 1; j <= 99; j++)
 		{
 
-			putchar((i % 10) + 48);
 			putchar((i / 10) + 48);
+			putchar((i % 10) + 48);
 			putchar(' ');
-			putchar((j % 10) + 48);
 			putchar((j / 10) + 48);
+			putchar((j % 10) + 48);
 			if (i == 98 && j == 99)
 				break;
 			putchar(',');
