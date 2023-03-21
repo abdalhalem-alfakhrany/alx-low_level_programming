@@ -6,7 +6,7 @@
  */
 int print_last_digit(int n)
 {
-	int lastDigit = ((n < 0) ? n * -1 : n) % 10;
+	unsigned int lastDigit = ((n < 0) ? n * -1 : n) % 10;
 
 	_putchar(lastDigit + '0');
 	return (lastDigit);
