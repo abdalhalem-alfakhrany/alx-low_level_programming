@@ -1,6 +1,6 @@
-#include <_putchar.c>
+#include "main.h"
 
-void print_alphbet(void)
+void print_alphabet(void)
 {
 	char i;
 
@@ -9,12 +9,4 @@ void print_alphbet(void)
 		_putchar(i);
 	}
 	_putchar('\n');
-}
-/**
-* main - check the code
-* Return: Always 0
-*/
-int main(void)
-{
-	return (0);
 }
