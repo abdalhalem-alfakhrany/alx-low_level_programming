@@ -6,7 +6,8 @@
 */
 int main(void)
 {
-	unsigned long n1 = 0, n2 = 1, i, fibonacci, tmp, sum;
+	unsigned long n1 = 0, n2 = 1, i, fibonacci, tmp;
+	int sum;
 
 	for (i = 0; i < 50; i++)
 	{
@@ -14,9 +15,9 @@ int main(void)
 		tmp = n2;
 		n2 = fibonacci;
 		n1 = tmp;
-		if (fibonacci % 2)
+		if ((fibonacci % 2) == 0)
 			sum += fibonacci;
 	}
-	printf("%ld\n", sum);
+	printf("%d\n", sum);
 	return (0);
 }
