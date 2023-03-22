@@ -7,7 +7,7 @@
 int main(void)
 {
 	unsigned long n1 = 0, n2 = 1, i, fibonacci, tmp;
-	int sum;
+	int sum = 0;
 
 	for (i = 0; i < 50; i++)
 	{
@@ -17,6 +17,8 @@ int main(void)
 		n1 = tmp;
 		if ((fibonacci % 2) == 0)
 			sum += fibonacci;
+		if (sum >= 4000000)
+			break;
 	}
 	printf("%d\n", sum);
 	return (0);
