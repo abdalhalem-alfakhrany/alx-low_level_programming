@@ -2,7 +2,7 @@
 
 /**
 * main - causes an infinite loop
-* Description: makeing a infine loop  
+* Description: makeing a infine loop
 * Return: 0
 */
 
