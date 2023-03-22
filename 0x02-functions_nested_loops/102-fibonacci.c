@@ -22,5 +22,6 @@ int main(void)
 
 		printf(", %ld", fibonacci);
 	}
+	printf("\n");
 	return (0);
 }
