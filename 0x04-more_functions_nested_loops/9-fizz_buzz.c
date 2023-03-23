@@ -7,9 +7,9 @@
 int main(void)
 {
 	int i;
-	
+
 	printf("1");
-	for(i = 2; i <= 100; i++)
+	for (i = 2; i <= 100; i++)
 	{
 		int fobob = 0;
 
@@ -21,16 +21,16 @@ int main(void)
 
 		switch (fobob)
 		{
-		case 0 :
+		case 0:
 			printf(" %d", i);
 			break;
-		case 1 :
+		case 1:
 			printf(" Fizz");
 			break;
-		case 2 :
+		case 2:
 			printf(" Buzz");
 			break;
-		case 3 :
+		case 3:
 			printf(" FizzBuzz");
 			break;
 		default:
