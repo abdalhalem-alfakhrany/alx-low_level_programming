@@ -11,7 +11,7 @@
 int _atoi(char *s)
 {
 	int length = strlen(s),	i, lastSign = 0;
-	int	numberStrLast = 0, startNumber, digitPlace, number;
+	int	numberStrLast = 0, startNumber, number;
 	char numberStr[32];
 
 	for (i = 0; i < 32; i++)
