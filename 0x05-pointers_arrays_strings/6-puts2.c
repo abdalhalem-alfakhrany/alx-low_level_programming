@@ -1,4 +1,5 @@
 #include "main.h"
+#include "string.h"
 
 /**
  * puts2 - print even indeces form string
@@ -7,9 +8,9 @@
 */
 void puts2(char *str)
 {
-	int i;
+	int i, length = strlen(str);
 
-	for (i = 0; str[i] != '\0'; i += 2)
+	for (i = 0; i < length; i += 2)
 		_putchar(str[i]);
 	_putchar('\n');
 }
