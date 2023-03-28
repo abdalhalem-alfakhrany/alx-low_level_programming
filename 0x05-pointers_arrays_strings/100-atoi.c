@@ -17,9 +17,6 @@ int _atoi(char *s)
 		if (isdigit(s[i]))
 		{
 			for (j = i; isdigit(s[j]); ++j)
-				;
-			j-=1;
-			for (; j >= i ; j--)
 				number = (number * 10) + (s[j] - '0');
 			break;
 		}
