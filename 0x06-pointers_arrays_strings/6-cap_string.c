@@ -12,7 +12,7 @@ char *cap_string(char *str)
 {
 	int i, strLength = strlen(str);
 	char sperators[] = {',', ';', '.', '!', '?',
-	   '\"', '(', ')', '{', '}', '\n', ' ', '\t'};
+	   '\"', '(', ')', '{', '}', '\n', ' '};
 
 	for (i = 0; i < strLength; i++)
 	{
@@ -23,6 +23,8 @@ char *cap_string(char *str)
 
 			str[i] = toupper(str[i]);
 		}
+		if (str[i] == '\t')
+			str[i--] = ' ';
 	}
 	return (str);
 }
