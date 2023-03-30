@@ -11,8 +11,9 @@
 char *cap_string(char *str)
 {
 	int i, strLength = strlen(str);
-	char sperators[] = {',', ';', '.', '!', '?', '"', '(', ')', '{', '}', '\n', ' '};
-	
+	char sperators[] = {',', ';', '.', '!', '?',
+	   '"', '(', ')', '{', '}', '\n', ' '};
+
 	for (i = 0; i < strLength; i++)
 	{
 		if (strchr(sperators, str[i]))
