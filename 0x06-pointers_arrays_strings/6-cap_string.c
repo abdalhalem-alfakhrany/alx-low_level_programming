@@ -3,9 +3,6 @@
 #include "string.h"
 #include "ctype.h"
 
-
-
-
 /**
  * issperator - check if char is in sperators list
  * @c: the char to check
@@ -14,8 +11,7 @@
 int issperator(char c)
 {
 	int i;
-	char sperators[] = {',', ';', '.', '!',
-	   '?', '"', '(', ')', '{', '}', '\n', ' '};
+	char sperators[] = {',', ';', '.', '!', '?', '"', '(', ')', '{', '}', '\n', ' '};
 
 	if (c == '\t')
 		return (2);
@@ -34,18 +30,19 @@ int issperator(char c)
 char *cap_string(char *str)
 {
 	int i, strLength = strlen(str);
-
+	char sperators[] = {',', ';', '.', '!', '?', '"', '(', ')', '{', '}', '\n', ' '};
+	
 	for (i = 0; i < strLength; i++)
 	{
-		if (issperator(str[i]) == 1)
+		if (strchr(sperators, str[i]))
 		{
-			while (issperator(str[i++]))
+			while (strchr(sperators, str[++i]))
 				;
 
 			str[i] = toupper(str[i]);
 		}
-		else if (issperator(str[i]) == 2)
-			str[i] = ' ';
+		else if (str[i] == '\t')
+			str[i--] = ' ';
 	}
 	return (str);
 }
