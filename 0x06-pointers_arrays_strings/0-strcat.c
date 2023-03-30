@@ -1,4 +1,5 @@
 #include "main.h"
+#include "string.h"
 
 /**
  * _strcat - concatinate tow strings
@@ -8,15 +9,14 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int i, j;
+	int destLength = strlen(dest);
+	int srcLength = strlen(src);
+	int i;
 
-	for (i = 0; dest[i] != '\0'; i++)
-		;
+	for (i = 0; i < srcLength; i++)
+		dest[destLength + i] = src[i];
 
-	for (j = 0; src[j] != '\0'; j++)
-	{
-		dest[++i] = src[j];
-	}
-	dest[i + 1] = '\0';
+	dest[destLength + srcLength] = '\0';
 	return (dest);
+
 }
