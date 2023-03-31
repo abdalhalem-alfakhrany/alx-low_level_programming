@@ -9,16 +9,19 @@
 char *leet(char *str)
 {
 	int i, strLength = strlen(str);
-	char leetTable[8][2] = {
+
+	char leetTable[9][2] = {
 		"oO",
 		"lL",
+		"",
 		"",
 		"eE",
 		"aA",
 		"",
-		"",
+		"tT",
 		"tT"
 	};
+
 	for (i = 0; i < strLength; i++)
 	{
 		char replace = str[i];
