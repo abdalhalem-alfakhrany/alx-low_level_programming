@@ -10,27 +10,18 @@ char *leet(char *str)
 {
 	int i, strLength = strlen(str);
 
-	char leetTable[9][2] = {
-		"oO",
-		"lL",
-		"",
-		"",
-		"eE",
-		"aA",
-		"",
-		"tT",
-		"tT"
-	};
+	char leetTable[5] = "aeotl";
+	int replaceTable[5] = {4, 3, 0, 7, 1};
 
 	for (i = 0; i < strLength; i++)
 	{
 		char replace = str[i];
 		int j;
 
-		for (j = 0; j < 8; j++)
-			if (strchr(leetTable[j], replace))
+		for (j = 0; j < 5; j++)
+			if (replace == leetTable[j] || replace == leetTable[j] - 32)
 			{
-				replace = '0' + j;
+				replace = '0' + replaceTable[j];
 				break;
 			}
 
