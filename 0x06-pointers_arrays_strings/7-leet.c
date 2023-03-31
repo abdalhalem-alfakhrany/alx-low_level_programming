@@ -1,31 +1,25 @@
 #include "main.h"
-#include "string.h"
 
 /**
- * leet - the legend speach
- * @str: the speach to compiled
- * Return: the string after leeting
+ * leet - take strings and capitalize words
+ * @a: string to capitalize
+ * Return: capitalized words
  */
-char *leet(char *str)
+
+char *leet(char *a)
 {
-	int i, strLength = strlen(str);
+	int i, x;
+	char check[] = "aAeEoOtTlL";
+	char change[] = "4433007711";
 
-	char leetTable[5] = "aeotl";
-	int replaceTable[5] = {4, 3, 0, 7, 1};
-
-	for (i = 0; i < strLength; i++)
+	for (i = 0; *(a + i) != '\0'; i++)
 	{
-		char replace = str[i];
-		int j;
-
-		for (j = 0; j < 5; j++)
-			if (replace == leetTable[j] || replace == leetTable[j] - 32)
+		for (x = 0; check[x]; x++)
+			if (check[x] == *(a + i))
 			{
-				replace = '0' + replaceTable[j];
+				*(a + i) = change[x];
 				break;
 			}
-
-		str[i] = replace;
 	}
-	return (str);
+	return (a);
 }
