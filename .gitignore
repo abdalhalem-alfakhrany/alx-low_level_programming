@@ -2,5 +2,8 @@
 *#
 _putchar.c
 main.c
+expected
+myout
+a.out
 *.*.swp
 *.*.swo
