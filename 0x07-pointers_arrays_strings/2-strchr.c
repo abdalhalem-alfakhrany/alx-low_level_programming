@@ -1,3 +1,4 @@
+#include "string.h"
 #include "main.h"
 
 /**
@@ -8,12 +9,10 @@
  */
 char *_strchr(char *s, char c)
 {
-	while (*s != '\0')
-	{
-		if (*s == c)
-			return (s);
-			
-		s++;
-	}
+	int length = strlen(s), i;
+
+	for (i = 0; i < length; i++)
+		if (s[i] == c)
+			return (&s[i]);
 	return (s);
 }
