@@ -9,7 +9,7 @@
  * @value: the mony value
  * Return: minmum count of coins to get value
  */
-int minCoins(int coinList[], int n, int value)
+int minCoins(int coinList[], int n, long value)
 {
 	int *coins, i, j;
 
@@ -45,7 +45,7 @@ int minCoins(int coinList[], int n, int value)
  */
 int main(int argc, char **argv)
 {
-	int k;
+	long k;
 	int coinsList[5] = {25, 10, 5, 2, 1};
 	int coinsCount = 5;
 
@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
-	k = atoi(argv[1]);
+	k = atol(argv[1]);
 
 	if (k < 0)
 	{
