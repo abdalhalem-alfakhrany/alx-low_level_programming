@@ -11,14 +11,21 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *new_str;
-	int s1_len = strlen(s1), s2_len = strlen(s2);
+	int s1_len = 0, s2_len = 0;
+
+	if (s1)
+		s1_len = strlen(s1);
+	if (s2)
+		s2_len = strlen(s2);
 
 	new_str = malloc(s1_len + s2_len + 1);
 	if (!new_str)
 		return (NULL);
 
-	memcpy(new_str, s1, s1_len);
-	memcpy(new_str + s1_len, s2, s2_len);
+	if (s1)
+		memcpy(new_str, s1, s1_len);
+	if (s2)
+		memcpy(new_str + s1_len, s2, s2_len);
 
 	new_str[s1_len + s2_len] = '\0';
 
