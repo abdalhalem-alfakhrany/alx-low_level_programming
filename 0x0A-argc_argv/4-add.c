@@ -1,41 +1,35 @@
-#include "stdio.h"
-#include "ctype.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 /**
- * main - Entry point
- * @argc: argument count
- * @argv: argument vector
- * Return: Always (0) Succses
+ * main - Entry point of the program
+ * @argc: The number of arguments passed to the program
+ * @argv: An array of string containing the arguments
+ *
+ * Return: 0 if success, 1 if an error occurred
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int i, result = 0;
+	int sum;
+	int i;
+	const char *arg;
+	const char *p;
 
-	if (argc == 1)
-	{
-		printf("0\n");
-		return (0);
-	}
-
+	sum = 0;
 	for (i = 1; i < argc; i++)
 	{
-		char *number = argv[i];
-		int n;
-
-		if (isalpha(number[0]))
+		arg = argv[i];
+		for (p = arg; *p != '\0'; p++)
 		{
-			printf("Error\n");
-			return (1);
+			if (!isdigit(*p))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		n = atoi(number);
-
-		if (n < 0)
-			continue;
-
-		result += atoi(number);
+		sum += atoi(arg);
 	}
-
-	printf("%d\n", result);
+	printf("%d\n", sum);
 	return (0);
 }
