@@ -1,68 +1,55 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "limits.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * minCoins - get the minumn amount of coins
- * @coinList: avilable coins
- * @n: coninsList length
- * @value: the mony value
- * Return: minmum count of coins to get value
+ * main - prints the minimum number of coins to make a change
+ * @argc: The number of command line arguments (not used)
+ * @argv: An array of command line argument strings
+ * Return: Always 0 (Success).
  */
-int minCoins(int coinList[], int n, long value)
+int main(int argc, char *argv[])
 {
-	int *coins, i, j;
-
-	coins = malloc((value + 1) * sizeof(int));
-
-	if (value == 0)
-		return (0);
-
-	coins[0] = 0;
-
-	for (i = 1; i <= value; i++)
-		coins[i] = INT_MAX;
-
-	for (i = 1; i <= value; i++)
-	{
-		for (j = 0; j < n; j++)
-			if (coinList[j] <= i)
-			{
-				int tempCoins = coins[i - coinList[j]];
-
-				if (tempCoins != INT_MAX && tempCoins + 1 < coins[i])
-					coins[i] = tempCoins + 1;
-			}
-	}
-	return (coins[value]);
-}
-
-/**
- * main - Entry point
- * @argc: argument count
- * @argv: argument vector
- * Return: Always (0) Succses
- */
-int main(int argc, char **argv)
-{
-	long k;
-	int coinsList[5] = {25, 10, 5, 2, 1};
-	int coinsCount = 5;
+	int cents, coins = 0;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-
-	k = atol(argv[1]);
-
-	if (k < 0)
+	cents = atoi(argv[1]);
+	if (cents < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
-
-	printf("%d\n", minCoins(coinsList, coinsCount, k));
+	while (cents > 0)
+	{
+		if (cents >= 25)
+		{
+			cents -= 25;
+			coins++;
+		}
+		else if (cents >= 10)
+		{
+			cents -= 10;
+			coins++;
+		}
+		else if (cents >= 5)
+		{
+			cents -= 5;
+			coins++;
+		}
+		else if (cents >= 2)
+		{
+			cents -= 2;
+			coins++;
+		}
+		else
+		{
+			cents--;
+			coins++;
+		}
+	}
+	printf("%d\n", coins);
 	return (0);
 }
