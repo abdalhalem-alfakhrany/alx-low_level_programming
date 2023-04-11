@@ -2,26 +2,16 @@
 #include <stdlib.h>
 
 /**
- * main - prints the minimum number of coins to make a change
- * @argc: The number of command line arguments (not used)
- * @argv: An array of command line argument strings
- * Return: Always 0 (Success).
+ * centos - centos
+ * @therecents: theras
+ * @therecoins: aslkd
+ * Retrun: void
  */
-int main(int argc, char *argv[])
+void centos(int *therecents, int *therecoins)
 {
-	int cents, coins = 0;
+	int cents = *therecents;
+	int coins = *therecoins;
 
-	if (argc != 2)
-	{
-		printf("Error\n");
-		return (1);
-	}
-	cents = atoi(argv[1]);
-	if (cents < 0)
-	{
-		printf("0\n");
-		return (0);
-	}
 	while (cents > 0)
 	{
 		if (cents >= 25)
@@ -50,6 +40,31 @@ int main(int argc, char *argv[])
 			coins++;
 		}
 	}
+	*therecents = cents;
+	*therecoins = coins;
+}
+/**
+ * main - prints the minimum number of coins to make a change
+ * @argc: The number of command line arguments (not used)
+ * @argv: An array of command line argument strings
+ * Return: Always 0 (Success).
+ */
+int main(int argc, char *argv[])
+{
+	int cents, coins = 0;
+
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	cents = atoi(argv[1]);
+	if (cents < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+	centos(&cents, &coins);
 	printf("%d\n", coins);
 	return (0);
 }
