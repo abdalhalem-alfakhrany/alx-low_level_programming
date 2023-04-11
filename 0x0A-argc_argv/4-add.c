@@ -30,9 +30,12 @@ int main(int argc, char **argv)
 		}
 		n = atoi(number);
 
+		if (n < 0)
+			continue;
+
 		result += atoi(number);
 	}
-
+	
 	printf("%d\n", result);
 	return (0);
 }
