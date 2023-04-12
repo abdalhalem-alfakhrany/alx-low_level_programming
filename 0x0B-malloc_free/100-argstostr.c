@@ -17,7 +17,7 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 		new_str_len += strlen(av[i]) + 1;
 
 	new_str = malloc(new_str_len);
@@ -25,7 +25,7 @@ char *argstostr(int ac, char **av)
 	if (!new_str)
 		return (NULL);
 
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		arg_len = strlen(av[i]);
 		memcpy(new_str + offset, av[i], arg_len);
