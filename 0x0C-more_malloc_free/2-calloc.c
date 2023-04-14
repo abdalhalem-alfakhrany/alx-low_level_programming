@@ -1,24 +1,32 @@
 #include "main.h"
-#include "stdlib.h"
+#include <stdlib.h>
 
 /**
- * _calloc - alocate nmemb count of size in memory
- * @nmemb: elements count
- * @size: size of element
- * Return: NULL if failer pointer to array if Success
- */
+  * _calloc - ...
+  * @nmemb: number of members
+  * @size: size
+  *
+  * Return: ...
+  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *array;
+	int i = 0, l = 0;
+	char *p;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	array = malloc(nmemb * size);
-	if (!array)
+	l = nmemb * size;
+	p = malloc(l);
+
+	if (p == NULL)
 		return (NULL);
 
-	memset(array, 0, nmemb * size);
+	while (i < l)
+	{
+		p[i] = 0;
+		i++;
+	}
 
-	return (array);
+	return (p);
 }
