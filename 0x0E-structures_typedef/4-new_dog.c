@@ -35,5 +35,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 	memcpy(dog->name, name, strlen(name));
 	memcpy(dog->owner, owner, strlen(owner));
 
+	if (!(dog->name) || !(dog->owner))
+	{
+		free(dog->name);
+		free(dog->owner);
+		free(dog);
+		return (NULL);
+	}
+
 	return (dog);
 }
