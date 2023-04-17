@@ -1,7 +1,36 @@
 #include "dog.h"
-#include "memory.h"
 #include "stdlib.h"
-#include "memory.h"
+
+
+/**
+ * _strlen - calculate string length
+ * @str: pointer to string
+ * Return: string length
+ */
+int _strlen(char *str)
+{
+	int len = 0;
+
+	while (str[len] != '\0')
+		len++;
+
+	return (len);
+}
+
+/**
+ * _memcpy - copy content of source to destination
+ * @dest: destination
+ * @src: source
+ * @size: size
+ * Return: void
+ */
+void _memcpy(char *dest, char *src, int size)
+{
+	int i;
+
+	for (i = 0; i < size; i++)
+		dest[i] = src[i];
+}
 
 /**
  * new_dog - create new dog and return pointer to it
@@ -20,8 +49,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (name == NULL || age == 0 || owner == NULL)
 		return (NULL);
 
-	dog->name = malloc(strlen(name));
-	dog->owner = malloc(strlen(owner));
+	dog->name = malloc(_strlen(name));
+	dog->owner = malloc(_strlen(owner));
 
 	if (!(dog->name) || !(dog->owner))
 	{
@@ -32,16 +61,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	dog->age = age;
-	memcpy(dog->name, name, strlen(name));
-	memcpy(dog->owner, owner, strlen(owner));
-
-	if (!(dog->name) || !(dog->owner))
-	{
-		free(dog->name);
-		free(dog->owner);
-		free(dog);
-		return (NULL);
-	}
+	_memcpy(dog->name, name, _strlen(name));
+	_memcpy(dog->owner, owner, _strlen(owner));
 
 	return (dog);
 }
