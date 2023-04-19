@@ -1,7 +1,7 @@
 #include "function_pointers.h"
 
 /**
- * array_iterator - itrate though array calling fucntion action foreach element
+ * array_iterator - itrate though array calling fucntion action foreach elet
  * @array: the array
  * @size: array size
  * @action: the action to be invoked
