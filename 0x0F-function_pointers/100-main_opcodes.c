@@ -31,8 +31,9 @@ int main(int argc, char **argv)
 	{
 		int op = *(unsigned char *)(address + i);
 
-		printf("%.2x\n", op);
+		printf("%.2x ", op);
 	}
+	putchar('\n');
 
 	return (0);
 }
