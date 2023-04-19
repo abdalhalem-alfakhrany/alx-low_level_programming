@@ -3,6 +3,13 @@
 #include "stdlib.h"
 #include "string.h"
 
+
+/**
+ * main - check the code
+ * @argc: arguments count
+ * @argv: argument vector
+ * Return: Always 0.
+ */
 int main(int argc, char **argv)
 {
 	int a, b;
@@ -29,7 +36,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		return (100);
 	}
-	
+
 	printf("%d\n", get_op_func(op)(a, b));
 
 	return (0);
