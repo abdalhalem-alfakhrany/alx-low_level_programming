@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 	b = atoi(argv[3]);
 	op = argv[2];
 
-	if (strchr("+-*/%", *op) == 0)
+	if (strchr("+-*/%", op[0]) == 0)
 	{
 		printf("Error\n");
 		return (99);
