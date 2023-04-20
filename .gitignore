@@ -1,6 +1,7 @@
 *~
 *#
 _putchar.c
+test.c
 main.c
 expected
 myout
