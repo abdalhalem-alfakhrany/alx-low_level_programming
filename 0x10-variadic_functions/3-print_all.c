@@ -17,7 +17,7 @@ void print_all(const char * const format, ...)
 
 	while (format[i])
 	{
-		if (i > 0 && format)
+		if (i > 0 && strchr("cifs", format[i]))
 			printf(", ");
 
 		switch (format[i])
