@@ -17,7 +17,7 @@ void print_all(const char * const format, ...)
 
 	while (format[i])
 	{
-		if (i > 0)
+		if (i > 0 && format)
 			printf(", ");
 
 		switch (format[i])
