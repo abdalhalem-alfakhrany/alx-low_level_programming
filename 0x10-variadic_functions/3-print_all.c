@@ -36,9 +36,11 @@ void print_all(const char * const format, ...)
 				char *str = va_arg(list, char *);
 
 				if (str)
+				{
 					printf("%s", str);
-				else
-					printf("(nil)");
+					break;
+				}
+				printf("(nil)");
 			}
 				break;
 			default:
