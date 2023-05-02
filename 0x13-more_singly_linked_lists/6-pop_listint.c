@@ -7,12 +7,13 @@
  */
 int pop_listint(listint_t **head)
 {
-	int lastint = (*head)->n;
+	int lastint;
 	listint_t *tmp;
 
-	if (!head || !(*head))
+	if (!head || *head == 0)
 		return (0);
 
+	lastint = (*head)->n;
 	tmp = *head;
 	*head = (*head)->next;
 	free(tmp);
