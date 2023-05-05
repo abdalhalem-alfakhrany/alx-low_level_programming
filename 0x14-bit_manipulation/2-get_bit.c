@@ -8,13 +8,6 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int i;
-
-	for (i = 0; i < index; i++)
-	{
-		if (n == 0)
-			return (-1);
-		n /= 2;
-	}
-	return (n % 2);
+	unsigned long int result = (n & ( 1 << index )) >> index;
+	return result;
 }
