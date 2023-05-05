@@ -5,6 +5,6 @@
 #include "stdio.h"
 
 unsigned int binary_to_uint(const char *);
-int _pow(int base, int exponent);
+void print_binary(unsigned long int n);
 
 #endif
