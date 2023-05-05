@@ -9,15 +9,14 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int i;
-	
-	if (n == 0)
-		return (0);
 
 	for (i = 0; i < index; i++)
 	{
+		n /= 2;
+		
 		if (n == 0)
 			return (-1);
-		n /= 2;
 	}
+
 	return (n % 2);
 }
