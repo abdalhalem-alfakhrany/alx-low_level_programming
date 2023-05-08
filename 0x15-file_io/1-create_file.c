@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * create_file - create new file and put text in it
+ * @filename: the file path
+ * @text_content: the text to put inside file
+ * Return: -1 filer , 1 if Success
+ */
 int create_file(const char *filename, char *text_content)
 {
 	int file_descriptor, flags, mods;
@@ -7,7 +13,7 @@ int create_file(const char *filename, char *text_content)
 
 	if (!filename)
 		return (0);
-	
+
 	flags = O_RDWR | O_CREAT | O_EXCL;
 	mods = S_IRUSR | S_IWUSR;
 
@@ -21,7 +27,7 @@ int create_file(const char *filename, char *text_content)
 	}
 
 	writen_bytes = write(file_descriptor, text_content, strlen(text_content));
-	
+
 	if (writen_bytes == -1)
 		return (-1);
 
