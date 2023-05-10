@@ -10,6 +10,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *file_content;
 	int file_descriptor;
+	size_t printed_letters = 0;
 
 	if (!filename)
 		return (0);
@@ -21,11 +22,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	file_content = malloc(letters * sizeof(char));
 
-	letters = read(file_descriptor, file_content, letters);
+	printed_letters = read(file_descriptor, file_content, letters);
+	
+	if ((int)printed_letters == -1)
+		return (0);
 
-	printf("%s", file_content);
+	write(1, file_content, printed_letters);
 
 	close(file_descriptor);
 
-	return (letters);
+	return (printed_letters);
 }
