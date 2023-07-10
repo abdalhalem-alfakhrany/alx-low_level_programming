@@ -34,7 +34,7 @@ close(file_descriptor);
 return (0);
 }
 
-buffer[bytes_read] = '\n';
+buffer[bytes_read] = '\0';
 
 bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
 if (bytes_written != bytes_read)
