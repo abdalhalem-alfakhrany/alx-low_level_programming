@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"clang-format.language.c.style": "-file:/home/abdalhalem/ALX/alx-low_level_programming/.clang-format"
+	}
+}

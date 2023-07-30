@@ -1,0 +1,21 @@
+BasedOnStyle: Google
+IndentWidth: 8
+UseTab: Always
+TabWidth: 8
+BreakBeforeBraces: Allman
+
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AlignTrailingComments: true
+
+SpacesInParentheses: false
+SpacesInAngles: false
+SpacesInContainerLiterals: false
+SpacesInSquareBrackets: false
+SpaceAfterCStyleCast: false
+
+PointerAlignment: Left
