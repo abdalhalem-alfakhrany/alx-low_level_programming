@@ -5,6 +5,9 @@
 		}
 	],
 	"settings": {
+		"files.associations": {
+			"time.h": "c"
+		}
 		// "clang-format.language.c.style": "-file:/home/abdalhalem/ALX/alx-low_level_programming/.clang-format"
 	}
 }
